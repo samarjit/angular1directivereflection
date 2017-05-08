@@ -23,7 +23,7 @@ JSON.stringify(scopevars, null, 3);  //view
 
 ```
 
-## Output
+### Output
 ```
 {
    "card": [
@@ -49,6 +49,13 @@ JSON.stringify(scopevars, null, 3);  //view
       }
    ]
 }
+```
+### To run
+To run the sample code just run a small http server in the base directory, and open `index.html` in browser
+
+```
+cd angular1directivereflection
+angular1directivereflection> http-server
 ```
 
 ## Possible improvements
