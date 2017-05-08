@@ -26,7 +26,7 @@ JSON.stringify(scopevars, null, 3);  //view
 ### Output
 ```
 {
-   "card": [
+   "card": [                      //directive name
       {
          "datatype": "reference",
          "name": "width"
@@ -50,6 +50,29 @@ JSON.stringify(scopevars, null, 3);  //view
    ]
 }
 ```
+
+### Original directive 
+Showing the code of original directive for comparison with the output
+```
+angular.module("myapp")
+   .directive("card", [function(){
+
+   	return {
+   		restrict: 'E',
+   		scope: {
+   			width: '=',
+   			height: '=',
+   			title: '@',
+   			message: '@',
+   			bgcolor: '@'
+   		},
+   		templateUrl: 'card.directive.html' 
+   	}
+
+   }]);
+```
+You can add multiple directives and see all of them will get listed
+
 ### To run
 To run the sample code just run a small http server in the base directory, and open `index.html` in browser
 
