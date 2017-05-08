@@ -1,0 +1,24 @@
+{
+  "name": "angular1directivereflection",
+  "version": "0.1.0",
+  "description": "Angularjs 1.x utility for directive runtime reflection",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samarjit/angular1directivereflection.git"
+  },
+  "keywords": [
+    "angularjs1",
+    "directive",
+    "reflection"
+  ],
+  "author": "Samarjit Samanta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samarjit/angular1directivereflection/issues"
+  },
+  "homepage": "https://github.com/samarjit/angular1directivereflection#readme"
+}

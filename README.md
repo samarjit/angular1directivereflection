@@ -6,7 +6,63 @@ Right now the code works like this, given a module name it will find all directi
 
 This code might be used in building screen builders where you may need to list down all the directives and the properties they take as input. In the screen builder you, first select a directive from a list, and can map variables available in Controller$scope to the directive listed isolated scope variables.
 
-### Welcome to contribute
 
-### MIT Licensed
+## Mechanism
+
+* Angularjs 1.x provide directives functions as string
+* esprima javascript parser is used to parse the code, and produces AST
+* AST tree traversal is done to find the scrope variable
+* escodegen is used to covert scope object to javascript code
+* eval is used to evaluate the code produced by escodegen to create scope object
+* The scope object is converted into json and returned
+
+## Code
+```
+var scopevars = DirectiveReflectionUtil.findScopeVars('myapp'); //returns a hash of all directives in myapp module and their scope object
+JSON.stringify(scopevars, null, 3);  //view
+
+```
+
+## Output
+```
+{
+   "card": [
+      {
+         "datatype": "reference",
+         "name": "width"
+      },
+      {
+         "datatype": "reference",
+         "name": "height"
+      },
+      {
+         "datatype": "string",
+         "name": "title"
+      },
+      {
+         "datatype": "string",
+         "name": "message"
+      },
+      {
+         "datatype": "string",
+         "name": "bgcolor"
+      }
+   ]
+}
+```
+
+## Possible improvements
+* Get rid of escodegen and parse scope object directly. This should not be impossible as scope:{} is fairly simple and predefined structure
+* Doing this will enable to get comments as description of each field.
+
+## Depends on 
+
+* esprima
+* escodegen-browser
+
+## Welcome to contribute
+Especially if you have removed escodegen and traversed AST to extract all the details.
+
+
+## MIT Licensed
 Feel free to fork and use. 
